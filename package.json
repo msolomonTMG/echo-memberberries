@@ -1,0 +1,28 @@
+{
+  "name": "member-berries",
+  "version": "1.0.0",
+  "description": "talk to the member berries on amazon echo",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "https": "^1.0.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msolomonTMG/echo-stage.git"
+  },
+  "author": "Mike Solomon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msolomonTMG/echo-stage/issues"
+  },
+  "homepage": "https://github.com/msolomonTMG/echo-stage#readme"
+}
