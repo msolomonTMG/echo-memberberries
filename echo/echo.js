@@ -111,7 +111,7 @@ var functions = {
       let audoFiles = ["bionic_man", "chewbacca_again", "ghostbusters", "slime_man"]
       let randomAudioFile = audoFiles[Math.floor(Math.random() * audoFiles.length)]
       helpers.getNewMemory().then(memory => {
-        responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/audio/" + randomAudioFile + ".mp3' /> . Welcome to member berries. Member " + memory + "?"
+        responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/audio/" + randomAudioFile + ".mp3' /> Welcome to member berries. Member " + memory + "?"
         helpers.formatResponse(responseData, echoData).then(response => {
           return resolve(response)
         }).catch(err => {
