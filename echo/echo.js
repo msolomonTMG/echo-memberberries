@@ -105,7 +105,7 @@ var functions = {
   handleLaunch: function(echoData) {
     return new Promise(function(resolve, reject) {
       let responseData = {}
-      responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/.herokuapp.com/audio/bionic_man.mp3' />"
+      responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/audio/bionic_man.mp3' />"
       helpers.formatResponse(responseData, echoData).then(response => {
         return resolve(response)
       }).catch(err => {
