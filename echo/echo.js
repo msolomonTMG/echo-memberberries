@@ -63,8 +63,11 @@ var functions = {
       switch(intent.name) {
         case 'AskIfMember':
           let userMemory = echoData.request.intent.slots.userMemory.value
+          let agreementSpeechChoices = ["Oh I member ", "Oh I love "]
+          let agreementSpeech = agreementSpeechChoices[Math.floor(Math.random() * agreementSpeechChoices.length)]
+
           helpers.getNewMemory().then(memory => {
-            responseData.speech = "Oh I member " + userMemory + ". Member " + memory + "?"
+            responseData.speech = agreementSpeech + userMemory + ". Member " + memory + "?"
             helpers.formatResponse(responseData, echoData).then(response => {
               return resolve(response)
             }).catch(err => {
@@ -105,7 +108,9 @@ var functions = {
   handleLaunch: function(echoData) {
     return new Promise(function(resolve, reject) {
       let responseData = {}
-      responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/audio/bionic_man.mp3' />"
+      let audoFiles = ["bionic_man", "chewbacca_again", "ghostbusters", "slime_man"]
+      let randomAudioFile = audoFiles[Math.floor(Math.random() * audoFiles.length)]
+      responseData.speech = "<audio src='https://echo-memberberries.herokuapp.com/audio/" + randomAudioFile + ".mp3' />"
       helpers.formatResponse(responseData, echoData).then(response => {
         return resolve(response)
       }).catch(err => {

@@ -13,8 +13,6 @@ app.use(express.static('public'))
 app.use(bodyParser.json());
 
 app.post('/api/v1/echo', function(req, res) {
-  // console.log(req.body)
-  // console.log(req.body.request.intent.slots)
   switch(req.body.request.type) {
     case 'LaunchRequest':
       echo.handleLaunch(req.body).then(response => {
