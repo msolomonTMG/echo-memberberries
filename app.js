@@ -9,6 +9,7 @@ const
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
+app.use(express.static('public'))
 app.use(bodyParser.json());
 
 app.post('/api/v1/echo', function(req, res) {
