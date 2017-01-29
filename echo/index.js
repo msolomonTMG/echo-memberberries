@@ -1,5 +1,7 @@
 var echo = require('./echo')
 
 module.exports = {
-  handleRequest: echo.handleRequest
+  handleIntent: echo.handleIntent,
+  handleLaunch: echo.handleLaunch,
+  handleSessionEnded: echo.handleSessionEnded
 }

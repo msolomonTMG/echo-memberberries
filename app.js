@@ -14,12 +14,29 @@ app.use(bodyParser.json());
 app.post('/api/v1/echo', function(req, res) {
   // console.log(req.body)
   // console.log(req.body.request.intent.slots)
-  echo.handleRequest(req.body).then(response => {
-    console.log('HERE WE ARE')
-    res.send(response)
-  }).catch(error => {
-    res.send(error)
-  })
+  switch(req.body.request.type) {
+    case 'LaunchRequest':
+      echo.handleLaunch(req.body).then(response => {
+        res.send(response)
+      }).catch(err => {
+        res.send(err)
+      })
+      break;
+    case 'IntentRequest':
+      echo.handleIntent(req.body).then(response => {
+        res.send(response)
+      }).catch(err => {
+        res.send(err)
+      })
+      break;
+    default: // SessionEndedRequest
+      echo.handleSessionEnded(req.body).then(response => {
+        res.send(response)
+      }).catch(err => {
+        res.send(err)
+      })
+      break;
+  }
 })
 
 app.listen(app.get('port'), function() {
