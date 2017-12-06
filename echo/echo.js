@@ -21,7 +21,7 @@ var memories = [
   "oregon trail", "pacman", "pinball machines",
   "when there would be a guy at the arcade who was way better than you at dance dance revolution",
   "when Ross cheated on Rachel but they were actually on a break", "Summer Sanders from Nickelodeon",
-  "when you enjoyed Adam Sandler movies", "Home Alone", "Macaulay Culkin"
+  "when you enjoyed Adam Sandler movies", "Home Alone", "Macaulay Culkin", "chewbacca again"
 ]
 
 var helpers = {
